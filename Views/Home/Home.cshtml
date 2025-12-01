@@ -1,0 +1,209 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+   <link rel="stylesheet" href="~/css/Style.css">
+   <title>
+      Smart Cart - HomePage
+   </title>
+   <style>
+      .cubes {
+         background-color: white;
+         display: inline-block;
+         border-radius: 12px;
+         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+         padding: 20px 40px;
+         margin-top: 45px;
+         margin-right: 60px;
+         color: #000;
+         text-align: center;
+         min-width: 250px;
+      }
+      .maping{
+     margin-left: 1%;
+      }
+   </style>
+</head>
+
+<body>
+
+   <header>
+
+      <section class="div">
+         <p><strong>SmartCart</strong></p>
+         <img src="~/Images/3b83549957d066febff448c3aa2a7510.jpg" alt="learn how our demo works">
+
+         <nav class="navigation">
+             <a asp-controller="Home" asp-action="Home">Home</a>
+             <a asp-controller="Home" asp-action="Demo">Demo</a>
+             <a asp-controller="Home" asp-action="Howitwork">How the demo works </a>
+             <a asp-controller ="Home" asp-action="AboutUs">About us </a>
+
+                @if (Context.Session.GetString("UserName") == null)
+                {
+                    <a asp-controller="Home" asp-action="LogIN"> Log in</a>
+                    <a asp-controller="Home" asp-action="SignUp">Sign up</a>
+                }
+                else
+                {
+                    <a asp-controller="Home" asp-action="Logout" style="color:red;font-weight:bold;">Logout</a>
+                }
+
+
+
+         </nav>
+
+            @if (Context.Session.GetString("UserName") != null)
+            {
+                <p style="color:green ; font-weight:bold">
+                    Welcome, @Context.Session.GetString("UserName")
+                </p>
+            } 
+
+
+      </section>
+
+   </header>
+
+   <div class="container">
+      <p
+         style="z-index: 3 ;color: rgb(11, 11, 11); font-weight: 900; border: 2px solid rgb(192, 191, 191); border-radius: 20px;  ">
+         Click the image to learn how our demo works</p>
+      <a href="./Howitwork.html">
+         <img src="~/Images/fcf211c9ca318241e5e66e07ed049bb7.jpg" alt="" class="mainIMage">
+         
+      </a>
+
+   </div>
+
+   <section class="sectionMid">
+      <div class="card">
+         <h2>Shop Fast. Shop Efficient. <span style="color:#16a34a;">Shop Smart!</span></h2>
+         <p>SmartCart is a smart supermarket cart that tracks items in real time and speeds up checkout, using either a
+            barcode-first flow — bringing a seamless, modern experience to every shopper.</p>
+
+
+      </div>
+
+
+
+   </section>
+
+
+   <section class="sectionMid" style="justify-content: left; padding:60px ;">
+      <p style="color: black; font-weight: bold; font-family: sans-serif; font-size: 25px;">Why SmartCart</p>
+
+      <div class="cubes">
+
+         <p style="color: #000; margin-bottom: 20px;"><strong>Live Item Tracking</strong> </p>
+         <p>see items and totals amount as you shop</p>
+         <ul>
+            <li>instant update</li>
+            <li>add items while shoping</li>
+
+         </ul>
+
+      </div>
+
+      <div class="cubes">
+         <p style="color: #000; margin-bottom: 20px;"><strong>Skip the Queue </strong> </p>
+         <p>Review your list on the tablet UI and head to fast checkout when you’re done</p>
+
+         <ul>
+            <li>no need to wait in line</li>
+
+            <li>digital buying</li>
+
+         </ul>
+      </div>
+
+   </section>
+
+<section class="sectionMid" style="justify-content: left; padding:60px ;">
+    <p style="color: black; font-weight: bold; font-family: sans-serif; font-size: 25px;">Comapring solutions</p>
+   <div class="cubes">
+     <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; text-align: left;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <th>Criteria</th>
+            <th>Smart Cart Solution (MVP)</th>
+            <th>Current In-Store Shopping Apps</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Checkout counter crowding</td>
+            <td>Eliminates or reduces checkout counters using cart sensors + tablet UI</td>
+            <td>Still rely on checkout counters; does not reduce queues</td>
+        </tr>
+        <tr>
+            <td>Internet connectivity requirement</td>
+            <td>Can work offline or with minimal connectivity</td>
+            <td>Require continuous internet connection</td>
+        </tr>
+        <tr>
+            <td>Item detection / add to cart</td>
+            <td>Barcode-first OR RFID chute for automatic add</td>
+            <td>User must scan items manually or only view prices</td>
+        </tr>
+      
+     
+        <tr>
+            <td>Checkout speed</td>
+            <td>Much faster, fewer steps, no queue</td>
+            <td>Still requires waiting in line</td>
+        </tr>
+        <tr>
+            <td>Reliability</td>
+            <td>Stable even with weak connectivity</td>
+            <td>Slows down or stops if internet is weak</td>
+        </tr>
+        
+        <tr>
+            <td>User learning curve</td>
+            <td>Requires adapting to a new system</td>
+            <td>Easy; users already familiar with phone apps</td>
+        </tr>
+    </tbody>
+</table>
+   </div>
+</section>
+
+
+
+   <footer>
+<nav style="padding: 50px; text-align: center;">
+    <a style=" color: #0ea84d; font-family: 'Times New Roman', Times, serif; font-size:  30px ;"
+        asp-controller="Home" asp-action="AboutUs">
+      
+      <img src="~/Images/32dabdb83c4fe1be1929f52bb8e328a4.jpg" class="maping" alt="">
+      
+      </a>
+  </nav>
+  <p style=" color: #0ea84d; font-family: 'Times New Roman', Times, serif; font-size:  30px ;margin-left: 30%;"><u>Click The Image to learn more about us!</u></a></p>
+   </footer>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,140 @@
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Sign up - page</title>
+  <link rel="stylesheet" href="~/css/Style.css">
+  <style>
+    .Spage {
+      border-radius: 20px;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      padding: 20px;
+      padding-left: 0px;
+      margin: 0 auto;
+      margin-top: 15%;
+      color: black;
+      text-align: center;
+      font-family: sans-serif;
+
+    }
+
+
+     .maping{
+      width: 100px;
+         height: auto;
+       margin-right: 80%;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+
+    }
+  </style>
+
+</head>
+
+<body style="background-color: #b7bdba;">
+  <header>
+    <section class="div">
+      <p><strong>SmartCart</strong></p>
+      <img src="~/Images/3b83549957d066febff448c3aa2a7510.jpg" alt="">
+
+      <nav class="navigation">
+                <a asp-controller="Home" asp-action="Home">Home</a>
+                <a asp-controller="Home" asp-action="Demo">Demo</a>
+                <a asp-controller="Home" asp-action="Howitwork">How the demo works </a>
+                <a asp-controller="Home" asp-action="LogIN"> Log in</a>
+                <a asp-controller="Home" asp-action="SignUp">Sign up</a>
+                <a asp-controller="Home" asp-action="AboutUs">About us </a>
+      </nav>
+    </section>
+  </header>
+
+ <nav style="padding: 0px; text-align: center;">
+    <a asp-controller="Home" asp-action="AboutUs">
+     
+      <img src="~/Images/32dabdb83c4fe1be1929f52bb8e328a4.jpg" class="maping" alt="">
+     
+      </a> <p style=" color: #0ea84d; font-family: 'Times New Roman', Times, serif; font-size:  20px ; margin-right: 75%;"><u> Click image to learn more about us!</u></p>
+       
+  </nav>
+
+
+
+
+  <section style="margin-bottom: 60%;">
+
+    <div class="Spage">
+      <h2> Join us in SmartCart </h2>
+      <p class="ftext">Create an Account to experince fast <span style="color: green;">Shopping!</span></p><br><br>
+
+
+      <form asp-controller="Home"asp-action="Signup" method="post"  onsubmit="return validate()">
+        <label for="name"> Full Name: </label>
+        <input style="text-align: center;" type="text" placeholder="Enter your Name here" required name="FullName" id="name"><br><br>
+
+        <label style="text-align: left;" for="email">Email Address: </label>
+        <input style="text-align: center;" type="email" placeholder="example@gmail.com" required name="Email" id="email"><br><br>
+
+        <label for="password">Password: </label>
+        <input style="text-align: center;" type="password" placeholder="*******" required name="Password" id="password"><br><br>
+
+        <label for="confirm">Confirm Password: </label>
+        <input style="text-align: center;" type="password" placeholder="Re-Enter your passwrod " required name="Confirm" id="confirm"><br><br>
+
+        <label for="username">Username: </label>
+        <input style="text-align: center;" type="text" placeholder="Enter your username" required name="UserName" id="username"><br><br>
+
+        <button href="./Home.html" type="submit"> Sign in </button>
+
+        <p style="margin-top: 15px; margin-left: 15px;">if you already have an account, click <a
+            href="./LogIN.html">here</a> to <b>log in!</b>
+
+
+
+        </p>
+
+      </form>
+    </div>
+
+  </section>
+
+
+</body>
+<!-- validate form using script-->>
+<script>
+function validate(){
+let username = document.getElementById("username").value
+let password = document.getElementById("password").value
+let con = document.getElementById("confirm").value
+
+
+if (password.length<6){
+  alert("Password must be at least 6")
+  return false ; 
+
+}
+
+if (password !== con){
+  alert("passwrod do not match")
+  return false; 
+}
+
+if (username.length<5){
+  alert("username must be at leat 5")
+  return false ;
+}
+
+
+}
+
+
+
+</script>
+</html>

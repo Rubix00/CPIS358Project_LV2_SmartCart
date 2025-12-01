@@ -1,0 +1,101 @@
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+   <title>Log in - page</title>
+   <link rel="stylesheet" href="~/css/Style.css">
+
+   <style>
+      .Lpage {
+
+         border-radius: 20px;
+         background-color: rgb(255, 255, 255);
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         width: 400px;
+         margin: 0 30px auto;
+         padding: 20px;
+         padding-left: 0px;
+         margin: 0 auto;
+         margin-top: 4%;
+         color: black;
+         text-align: center;
+         font-family: sans-serif;
+      }
+
+
+        .mapping_Log{
+         width: 100px;
+         height: auto;
+       margin-right: 80%;
+      }
+   </style>
+
+</head>
+
+
+
+
+<body style="background-color: #b7bdba;">
+   <header>
+      <section class="div">
+         <p><strong>SmartCart</strong></p>
+         <img src="~/Images/3b83549957d066febff448c3aa2a7510.jpg" alt="">
+
+         <nav class="navigation">
+                <a asp-controller="Home" asp-action="Home">Home</a>
+                <a asp-controller="Home" asp-action="Demo">Demo</a>
+                <a asp-controller="Home" asp-action="Howitwork">How the demo works </a>
+                <a asp-controller="Home" asp-action="LogIN"> Log in</a>
+                <a asp-controller="Home" asp-action="SignUp">Sign up</a>
+                <a asp-controller="Home" asp-action="AboutUs">About us </a>
+         </nav>
+      </section>
+   </header>
+ <nav style="padding: 50px; text-align: center;">
+    <a asp-controller="Home" asp-action="AboutUs">
+
+            <img src="~/Images/32dabdb83c4fe1be1929f52bb8e328a4.jpg" class="mapping_Log" alt="">
+      
+     </a>   <p style=" color: #0ea84d; font-family: 'Times New Roman', Times, serif; font-size:  20px ; margin-right: 75%;"><u> Click image to learn more about us!</u></p>
+  </nav>
+   <div class="Lpage">
+      <h2> Log in </h2> <br>
+
+
+        <form asp-controller="Home" method="post" asp-action="LogIN">
+
+
+         <label for="username">Username </label>
+         <input type="text" placeholder="Enter your username" required name="UserName" id="username"><br><br>
+
+         <label for="password">Password </label>
+         <input type="password" placeholder="*******" required name="Password" id="password"><br><br>
+
+
+
+         <button type="submit"> Log in</button>
+
+         <p style="margin-top: 15px; margin-left: 15px;">If you do not have an account, click <a
+               href="./SignUp.html">here</a> to <b>sign up!</b>
+
+
+
+         </p>
+
+      </form>
+   </div>
+
+
+
+</body>
+
+
+
+
+</html>
