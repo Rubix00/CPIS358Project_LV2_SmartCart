@@ -18,7 +18,7 @@ namespace WebApplication_SMARTCART
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+               .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
             // Session
@@ -34,6 +34,24 @@ namespace WebApplication_SMARTCART
             }
 
             );
+
+
+            // Cokkies
+
+            builder.Services.ConfigureApplicationCookie(Options =>
+            {
+                Options.ExpireTimeSpan = TimeSpan.FromDays(7);
+
+                Options.SlidingExpiration = true;
+                Options.Cookie.HttpOnly = true;
+                Options.Cookie.IsEssential = true;
+
+
+
+            });
+
+
+
 
             var app = builder.Build();
 
